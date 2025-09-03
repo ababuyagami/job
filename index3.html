@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ポートフォリオ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .fs-7 {
+            font-size: 14px;
+        }
+
+        body {
+            font-family: "Noto Sans JP", serif;
+        }
+
+        .hover-animation:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .first-view {
+            height: 100vh;
+        }
+
+        .fs-90px {
+            font-size: 90px;
+        }
+
+        .glass {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .fade-in-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        #technical .fade-in-item:nth-of-type(2),
+        #created .fade-in-item:nth-of-type(even) {
+            transition-delay: 0.2s;
+        }
+
+        #technical .fade-in-item:nth-of-type(3) {
+            transition-delay: 0.4s;
+        }
+
+        /* 画面に入ったときに付与されるクラス */
+        .fade-in-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <style>
+        /* モーダルと背景の指定 */
+        .modal2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 50%);
+            overflow: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            box-sizing: border-box;
+        }
+
+        /* モーダルの擬似要素の指定 */
+        .modal2:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            margin-left: -0.2em;
+        }
+
+        /* クラスが追加された時の指定 */
+        .modal2.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* モーダル内側の指定 */
+        .modal2-container {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 90%;
+            height: 90%;
+        }
+
+        /* モーダルを閉じるボタンの指定 */
+        .modal2-close {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            background: #000;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* モーダルのコンテンツ部分の指定 */
+        .modal2-content {
+            background: #fff;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="position-fixed top-0 start-0 end-0 z-1 glass py-2">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto"><i class="bi bi-person-circle me-2"></i>ND</div>
+                <div class="col-auto">skill / created</div>
+            </div>
+
+        </div>
+    </header>
+    <section class="py-5 bg-dark text-white first-view">
+        <div class="py-5">
+            <h1 class="text-center fw-bold fs-90px">Portfolio</h1>
+            <div class="text-center text-secondary">ポートフォリオ</div>
+        </div>
+    </section>
+    <section class="py-5" id="technical">
+        <div class="py-5">
+            <h1 class="text-center fw-bold">技術的なこと</h1>
+            <div class="text-center mb-5 text-secondary">skill</div>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-3 gy-4">
+                    <div class="col fade-in-item">
+                        <div class="row">
+                            <div class="col-auto">
+                                <i class="bi bi-code-slash lh-1 fs-5 text-danger"></i>
+                            </div>
+                            <div class="col">
+                                <h2 class="lh-1 fs-5">コーディング</h2>
+                                <div class="fs-7 text-secondary mb-1">
+                                    HTML / CSS / JavaScript / Vue.js / Bootstrap
+                                </div>
+                                <div>
+                                    CMSで管理しているデータをJSON形式で取得し、そのデータに基づいてHTMLを動的に生成する仕組みを構築しました。これにより、コンテンツの更新作業が大幅に効率化されました。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col fade-in-item">
+                        <div class="row">
+                            <div class="col-auto">
+                                <i class="bi bi-brush lh-1 fs-5 text-danger"></i>
+                            </div>
+                            <div class="col">
+                                <h2 class="lh-1 fs-5">デザイン</h2>
+                                <div class="fs-7 text-secondary mb-1">
+                                    Photoshop / UI / UX
+                                </div>
+                                <div>
+                                    ウェブサイトにプレースホルダーとアニメーションを導入した結果、ユーザー体験が向上。直帰率の改善とコンバージョン向上につながりました。これにより、サイト全体のパフォーマンスも向上しました。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col fade-in-item">
+                        <div class="row">
+                            <div class="col-auto">
+                                <i class="bi bi-graph-up lh-1 fs-5 text-danger"></i>
+                            </div>
+                            <div class="col">
+                                <h2 class="lh-1 fs-5">SEO対策</h2>
+                                <div class="fs-7 text-secondary mb-1">
+                                    アナリティクス / サーチコンソール / Pagespeed Insight
+                                </div>
+                                <div>
+                                    GoogleアナリティクスやGoogleサーチコンソールを活用し、サイトデータを詳細に分析。その結果、SEOと検索パフォーマンスが大幅に改善され、コンバージョン率の向上にもつながりました。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="app1">
+        <section class="py-5 bg-light" id="created">
+            <div class="py-5">
+                <h1 class="text-center fw-bold">作成したもの</h1>
+                <div class="text-center mb-5 text-secondary">created</div>
+                <div class="container mb-5">
+                    <div class="row row-cols-1 row-cols-md-2 gy-5">
+                        <div class="col fade-in-item" v-for="item in items" :key="item.index">
+                            <span class="text-dark text-decoration-none js-modal2-open hover-animation"
+                                @click="showDetails(item)">
+                                <img :src="item.image" alt="" class="border border-dark" loading="lazy" />
+                                <h2 class="fs-5 my-2">{{item.title}}</h2>
+                                <div class="row">
+                                    <div class="col-auto" v-for="badge in item.badge">
+                                        <div class="bg-danger fs-7 px-2 rounded-pill text-white">{{badge}}</div>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- モーダル本体 -->
+        <div class="modal2 js-modal2 z-3">
+            <div class="modal2-container">
+                <!-- モーダルを閉じるボタン -->
+                <div class="modal2-close js-modal2-close">×</div>
+                <!-- モーダル内部のコンテンツ -->
+                <div class="modal2-content rounded overflow-y-scroll text-start">
+                    <section class="py-5">
+                        <div class="container pb-5">
+                            <div class="row gx-md-5">
+                                <div class="col-12 col-md-8">
+                                    <div>
+                                        <img :src="selectedItem.image" alt="" class="border border-secondary">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <h1 class="fw-bold fs-2">{{ selectedItem.title }}</h1>
+                                    <div class="row mb-4 gy-2">
+                                        <div class="col-auto" v-for="badge in selectedItem.badge">
+                                            <div class="bg-danger fs-7 px-2 rounded-pill text-white">{{badge}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 bg-light rounded p-3 border">
+                                        <h2 class="fs-5 fw-bold">概要</h2>
+                                        <p class="m-0">{{ selectedItem.detail?.overview }}<br><a
+                                                :href="selectedItem.url" target="_blank" class="link-danger"><i class="bi bi-box-arrow-up-right me-2"></i>ページを見る</a></p>
+                                    </div>
+                                    <div class="mb-4 bg-light rounded p-3 border">
+                                        <h2 class="fs-5 fw-bold">制作時のポイント</h2>
+                                        <p class="m-0">{{ selectedItem.detail?.point }}</p>
+                                    </div>
+                                    <div class="mb-4 bg-light rounded p-3 border">
+                                        <h2 class="fs-5 fw-bold">作業工程</h2>
+                                        <p class="m-0">{{ selectedItem.detail?.engineering }}</p>
+                                    </div>
+                                    <div class="mb-4 bg-light rounded p-3 border">
+                                        <h2 class="fs-5 fw-bold">成果・実績</h2>
+                                        <ul class="m-0">
+                                            <li v-for="result in selectedItem.detail?.results">{{ result }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-4 bg-light rounded p-3 border">
+                                        <h2 class="fs-5 fw-bold">技術的なこと</h2>
+                                        <ul class="m-0">
+                                            <li v-for="technology in selectedItem.detail?.technology">{{ technology }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="py-5 bg-light">
+                        <div class="container pt-5">
+                            <h1 class="text-center fw-bold">キャプチャ</h1>
+                            <div class="text-center mb-5 text-secondary">capture</div>
+                            <div class="row row-cols-1 row-cols-md-2 gx-md-5">
+                                <div class="col col-md-8">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <i class="bi bi-display lh-1 fs-5 text-danger"></i>
+                                        </div>
+                                        <div class="col">
+                                            <h2 class="lh-1 fs-5">PC</h2>
+                                        </div>
+                                    </div>
+                                    <img src="https://ababuyagami.github.io/job/image/top_pc.png" alt=""
+                                        class="border border-secondary">
+                                </div>
+                                <div class="col col-md-4 mt-5 pt-5 mt-md-0 pt-md-0">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <i class="bi bi-phone lh-1 fs-5 text-danger"></i>
+                                        </div>
+                                        <div class="col">
+                                            <h2 class="lh-1 fs-5">SP</h2>
+                                        </div>
+                                    </div>
+                                    <img src="https://ababuyagami.github.io/job/image/top_sp.png" alt=""
+                                        class="border border-secondary">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const App1 = {
+            data() {
+                return {
+                    items: [
+                        {
+                            image: "https://www.bodymaker.jp/_img/banner/20250210_po1.jpg",
+                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            title: "ECサイトトップページ",
+                            url: "https://www.bodymaker.jp/shop/default.aspx",
+                            detail: {
+                                overview: "スポーツ用品店のECサイト",
+                                point: "マージンやアイコンでデザインを改善し、CMS連携スクリプトで運用を効率化。さらにCLS対策で直帰率も改善しました。",
+                                engineering: "要件整理／デザイン調整／コーディング／CMS連携／テスト／SEO対策",
+                                results: [
+                                    "直帰率：49.1% → 5.13%",
+                                    "CLS 0.0を実現しLCPが1.8秒まで改善",
+                                    "CMS化による更新作業の効率化"
+                                ],
+                                technology: [
+                                    "CMSとAPI連携（JSON取得→HTML生成）",
+                                    "プレースホルダーを用意し、HTML生成時に書き換えを行いCLS対策"
+                                ],
+                            },
+                            capture: {
+                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
+                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                            }
+                        },
+                        {
+                            image: "https://www.bodymaker.jp/_img/banner/20250210_po8.jpg",
+                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            title: "筋肉図解ページ",
+                            url: "https://www.bodymaker.jp/contents/training/zu.html",
+                            detail: {
+                                overview: "スポーツ用品店のECサイト",
+                                point: "さっと読めるよう簡潔にまとめ、ユーザーが関心を持つストレッチや筋トレ方法に関する情報を中心に掲載しました。サーチコンソールや競合サイトを参考にSEO対策を施した結果、強調スニペットとして表示されることもあります。",
+                                engineering: "要件整理／デザイン調整／コーディング／SEO対策",
+                                results: [
+                                    "筋肉関係のキーワードでSEO1位を獲得（協調スニペットに表示）",
+                                    "クリック数：949→3474",
+                                    "表示回数：36,500→181,000"
+                                ],
+                                technology: [
+                                    "",
+                                ],
+                            },
+                            capture: {
+                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
+                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                            }
+                        },
+                        {
+                            image: "https://www.bodymaker.jp/_img/banner/20250210_po2.jpg",
+                            badge: ["HTML", "CSS", "JavaScript", "Vue.js","Bootstrap"],
+                            title: "店舗ページ",
+                            url: "https://www.bodymaker.jp/shop/secure/store.aspx",
+                            detail: {
+                                overview: "スポーツ用品店のECサイト",
+                                point: "店舗スタッフが更新しやすいよう、店舗課の意見を反映したデザインです。店舗用CMSと連携し、営業時間など重要な変更点を分かりやすく表示します。",
+                                engineering: "要件整理／デザイン調整／コーディング／CMS連携",
+                                results: [
+                                    "CMS化による更新作業の効率化",
+                                    "店舗課からの情報発信"
+                                ],
+                                technology: [
+                                    "CMSとAPI連携（JSON取得→HTML生成）",
+                                ],
+                            },
+                            capture: {
+                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
+                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                            }
+                        },
+                        {
+                            image: "https://www.bodymaker.jp/_img/banner/20250210_po4.jpg",
+                            badge: ["HTML", "CSS", "JavaScript", "Vue.js","Bootstrap"],
+                            title: "アウトレットページ",
+                            url: "https://www.bodymaker.jp/shop/secure/outlet.aspx",
+                            detail: {
+                                overview: "スポーツ用品店のECサイト",
+                                point: "店舗スタッフがCMSを使って在庫を管理することで、商品の売り切れ表示をリアルタイムで反映できるようにしました。これにより、顧客は来店前に商品の在庫状況を確認できるため、ユーザー体験の向上につながっています。",
+                                engineering: "要件整理／デザイン調整／コーディング／CMS連携",
+                                results: [
+                                    "CMS化による更新作業の効率化",
+                                    "店舗課からの情報発信",
+                                    "在庫状況がわかるようになり、来客数増加"
+                                ],
+                                technology: [
+                                    "CMSとAPI連携（JSON取得→HTML生成）",
+                                ],
+                            },
+                            capture: {
+                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
+                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                            }
+                        },
+                        {
+                            image: "https://www.bodymaker.jp/_img/banner/20250210_po6.jpg",
+                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            title: "ボクシングジムページ",
+                            url: "https://www.bodymaker.jp/shop/secure/boxingring.aspx",
+                            detail: {
+                                overview: "スポーツ用品店のECサイト",
+                                point: "契約を促すため、軽めのデザインとサポート面を強調することで安心感を与えています。また、文章量を調整してレイアウトの崩れを防いでいます。このデザインは営業活動で実際に使われており、現在も定期的に施工が行われています。",
+                                engineering: "要件整理／デザイン調整／コーディング",
+                                results: [
+                                    "継続的な施工実績",
+                                    "営業活動に貢献"
+                                ],
+                                technology: [
+                                    "",
+                                ],
+                            },
+                            capture: {
+                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
+                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                            }
+                        },
+                        {
+                            image: "https://www.bodymaker.jp/_img/banner/20250210_po7.jpg",
+                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            title: "社内ジムページ",
+                            url: "https://www.bodymaker.jp/shop/secure/in_house_gym.aspx",
+                            detail: {
+                                overview: "スポーツ用品店のECサイト",
+                                point: "緑を基調に、コンバージョンカラーのオレンジで視線を誘導。4つの料金プランで費用感を分かりやすくし、1ページで完結する問い合わせフォームと入力チェック機能も設けました。",
+                                engineering: "要件整理／デザイン調整／コーディング",
+                                results: [
+                                    "継続的な施工実績",
+                                    "営業活動に貢献"
+                                ],
+                                technology: [
+                                    "",
+                                ],
+                            },
+                            capture: {
+                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
+                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                            }
+                        },
+
+                    ],
+                    isCurrent: 0,
+                    selectedItem: {}
+                };
+            },
+            mounted() {
+                this.fadeInAnimation();
+                this.modalWindow();
+            },
+            methods: {
+                fadeInAnimation() {
+                    // 1. Observerを作成
+                    const observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            // isIntersectingは、ターゲット要素がルート要素と交差しているかどうかを示す
+                            if (entry.isIntersecting) {
+                                // 画面に入ったら.is-visibleクラスを追加
+                                entry.target.classList.add('is-visible');
+                                // 一度アニメーションしたら監視を停止
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+
+                    // 2. 監視対象の要素を取得し、監視を開始
+                    const fadeInItems = document.querySelectorAll('.fade-in-item');
+                    fadeInItems.forEach(item => {
+                        observer.observe(item);
+                    });
+                },
+                modalWindow() {
+                    //要素を取得
+                    const modal2 = document.querySelector('.js-modal2'),
+                        open = document.querySelectorAll('.js-modal2-open'),
+                        close = document.querySelector('.js-modal2-close');
+
+                    //「開くボタン」をクリックしてモーダルを開く
+                    function modal2Open() {
+                        modal2.classList.add('is-active');
+                    }
+                    for (let i = 0; i < open.length; i++) {
+                        open[i].addEventListener('click', modal2Open);
+                    }
+
+                    //「閉じるボタン」をクリックしてモーダルを閉じる
+                    function modal2Close() {
+                        modal2.classList.remove('is-active');
+                    }
+                    close.addEventListener('click', modal2Close);
+
+                    //「モーダルの外側」をクリックしてモーダルを閉じる
+                    function modal2Out(e) {
+                        if (e.target == modal2) {
+                            modal2.classList.remove('is-active');
+                        }
+                    }
+                    addEventListener('click', modal2Out);
+                },
+                showDetails(item) {
+                    this.selectedItem = item;
+                    // isModalOpen.value = true;
+                    console.log(this.selectedItem)
+                }
+            },
+        };
+
+        const app1 = Vue.createApp(App1);
+        app1.mount("#app1");
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>
