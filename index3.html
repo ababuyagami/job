@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         img {
             max-width: 100%;
@@ -30,6 +31,10 @@
         .hover-animation:hover {
             opacity: 0.6;
             cursor: pointer;
+        }
+
+        .font-mont {
+            font-family: "Montserrat", sans-serif;
         }
 
         .first-view {
@@ -123,16 +128,24 @@
             background: #fff;
             height: 100%;
         }
+
+        .gradation {
+            background-image: linear-gradient(90deg, #1c1d1d, #7b1010);
+        }
     </style>
 </head>
 
 <body>
     <main id="app1">
-        <section class="py-5 bg-dark text-white">
+        <section class="py-5 bg-dark text-white gradation">
             <div class="container text-center">
                 <div class="py-5">
-                    <h1 class="fw-bold fs-90px">Portfolio</h1>
-                    <div class="fs-1 mb-5"><i class="bi bi-person-circle me-2"></i>ND</div>
+                    <div class="col-12 col-md-6 mx-auto">
+                        <h1 class="fw-bold fs-90px font-mont text-center"><img
+                                src="https://ababuyagami.github.io/job/image/portfolio_wh.png" alt="PORTFOLIO"></h1>
+                    </div>
+                    <div class="fs-2 mb-5 font-mont"><i class="bi bi-person-circle me-2"></i>ND</div>
+                    <p class="mb-0">わかりやすく、使い勝手の良いUI/UXを追求し、さらに更新しやすい仕組みまで考慮したWebサイトを制作しました。</p>
                 </div>
             </div>
         </section>
@@ -205,7 +218,7 @@
                                 @click="showDetails(item)">
                                 <img :src="item.image" alt="" class="border border-dark" loading="lazy" />
                                 <h2 class="fs-5 my-2">{{item.title}}</h2>
-                                <div class="row">
+                                <div class="row gy-2">
                                     <div class="col-auto" v-for="badge in item.badge">
                                         <div class="bg-danger fs-7 px-2 rounded-pill text-white">{{badge}}</div>
                                     </div>
@@ -484,7 +497,8 @@
                     //要素を取得
                     const modal2 = document.querySelector('.js-modal2'),
                         open = document.querySelectorAll('.js-modal2-open'),
-                        close = document.querySelector('.js-modal2-close');
+                        close = document.querySelector('.js-modal2-close'),
+                        modalContent = document.querySelector('.modal2-content');
 
                     //「開くボタン」をクリックしてモーダルを開く
                     function modal2Open() {
@@ -497,6 +511,9 @@
                     //「閉じるボタン」をクリックしてモーダルを閉じる
                     function modal2Close() {
                         modal2.classList.remove('is-active');
+                        setTimeout(() => {
+                            modalContent.scrollTop = 0;
+                        }, 500);
                     }
                     close.addEventListener('click', modal2Close);
 
@@ -504,6 +521,9 @@
                     function modal2Out(e) {
                         if (e.target == modal2) {
                             modal2.classList.remove('is-active');
+                            setTimeout(() => {
+                            modalContent.scrollTop = 0;
+                        }, 500);
                         }
                     }
                     addEventListener('click', modal2Out);
