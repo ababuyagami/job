@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <style>
         img {
             max-width: 100%;
@@ -37,13 +38,6 @@
 
         .fs-90px {
             font-size: 90px;
-        }
-
-        .glass {
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .fade-in-item {
@@ -133,80 +127,73 @@
 </head>
 
 <body>
-    <header class="position-fixed top-0 start-0 end-0 z-1 glass py-2">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-auto"><i class="bi bi-person-circle me-2"></i>ND</div>
-                <div class="col-auto">skill / created</div>
+    <main id="app1">
+        <section class="py-5 bg-dark text-white">
+            <div class="container text-center">
+                <div class="py-5">
+                    <h1 class="fw-bold fs-90px">Portfolio</h1>
+                    <div class="fs-1 mb-5"><i class="bi bi-person-circle me-2"></i>ND</div>
+                </div>
             </div>
-
-        </div>
-    </header>
-    <section class="py-5 bg-dark text-white first-view">
-        <div class="py-5">
-            <h1 class="text-center fw-bold fs-90px">Portfolio</h1>
-            <div class="text-center text-secondary">ポートフォリオ</div>
-        </div>
-    </section>
-    <section class="py-5" id="technical">
-        <div class="py-5">
-            <h1 class="text-center fw-bold">技術的なこと</h1>
-            <div class="text-center mb-5 text-secondary">skill</div>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 gy-4">
-                    <div class="col fade-in-item">
-                        <div class="row">
-                            <div class="col-auto">
-                                <i class="bi bi-code-slash lh-1 fs-5 text-danger"></i>
-                            </div>
-                            <div class="col">
-                                <h2 class="lh-1 fs-5">コーディング</h2>
-                                <div class="fs-7 text-secondary mb-1">
-                                    HTML / CSS / JavaScript / Vue.js / Bootstrap
+        </section>
+        <section class="py-5" id="technical">
+            <div class="py-5">
+                <h1 class="text-center fw-bold">技術的なこと</h1>
+                <div class="text-center mb-5 text-secondary">skill</div>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-md-3 gy-4">
+                        <div class="col fade-in-item">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="bi bi-code-slash lh-1 fs-5 text-danger"></i>
                                 </div>
-                                <div>
-                                    CMSで管理しているデータをJSON形式で取得し、そのデータに基づいてHTMLを動的に生成する仕組みを構築しました。これにより、コンテンツの更新作業が大幅に効率化されました。
+                                <div class="col">
+                                    <h2 class="lh-1 fs-5">コーディング</h2>
+                                    <div class="fs-7 text-secondary mb-1">
+                                        HTML / CSS / JavaScript / Vue.js / Bootstrap
+                                    </div>
+                                    <div>
+                                        CMSで管理しているデータをJSON形式で取得し、そのデータに基づいてHTMLを動的に生成する仕組みを構築しました。これにより、コンテンツの更新作業が大幅に効率化されました。
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col fade-in-item">
-                        <div class="row">
-                            <div class="col-auto">
-                                <i class="bi bi-brush lh-1 fs-5 text-danger"></i>
-                            </div>
-                            <div class="col">
-                                <h2 class="lh-1 fs-5">デザイン</h2>
-                                <div class="fs-7 text-secondary mb-1">
-                                    Photoshop / UI / UX
+                        <div class="col fade-in-item">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="bi bi-brush lh-1 fs-5 text-danger"></i>
                                 </div>
-                                <div>
-                                    ウェブサイトにプレースホルダーとアニメーションを導入した結果、ユーザー体験が向上。直帰率の改善とコンバージョン向上につながりました。これにより、サイト全体のパフォーマンスも向上しました。
+                                <div class="col">
+                                    <h2 class="lh-1 fs-5">デザイン</h2>
+                                    <div class="fs-7 text-secondary mb-1">
+                                        Photoshop / UI / UX
+                                    </div>
+                                    <div>
+                                        ウェブサイトにプレースホルダーとアニメーションを導入した結果、ユーザー体験が向上。直帰率の改善とコンバージョン向上につながりました。これにより、サイト全体のパフォーマンスも向上しました。
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col fade-in-item">
-                        <div class="row">
-                            <div class="col-auto">
-                                <i class="bi bi-graph-up lh-1 fs-5 text-danger"></i>
-                            </div>
-                            <div class="col">
-                                <h2 class="lh-1 fs-5">SEO対策</h2>
-                                <div class="fs-7 text-secondary mb-1">
-                                    アナリティクス / サーチコンソール / Pagespeed Insight
+                        <div class="col fade-in-item">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="bi bi-graph-up lh-1 fs-5 text-danger"></i>
                                 </div>
-                                <div>
-                                    GoogleアナリティクスやGoogleサーチコンソールを活用し、サイトデータを詳細に分析。その結果、SEOと検索パフォーマンスが大幅に改善され、コンバージョン率の向上にもつながりました。
+                                <div class="col">
+                                    <h2 class="lh-1 fs-5">SEO対策</h2>
+                                    <div class="fs-7 text-secondary mb-1">
+                                        アナリティクス / サーチコンソール / Pagespeed Insight
+                                    </div>
+                                    <div>
+                                        GoogleアナリティクスやGoogleサーチコンソールを活用し、サイトデータを詳細に分析。その結果、SEOと検索パフォーマンスが大幅に改善され、コンバージョン率の向上にもつながりました。
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <div id="app1">
+        </section>
         <section class="py-5 bg-light" id="created">
             <div class="py-5">
                 <h1 class="text-center fw-bold">作成したもの</h1>
@@ -240,7 +227,7 @@
                     <section class="py-5">
                         <div class="container pb-5">
                             <div class="row gx-md-5">
-                                <div class="col-12 col-md-8">
+                                <div class="col-12 col-md-8 mb-4 mb-md-0">
                                     <div>
                                         <img :src="selectedItem.image" alt="" class="border border-secondary">
                                     </div>
@@ -255,7 +242,8 @@
                                     <div class="mb-4 bg-light rounded p-3 border">
                                         <h2 class="fs-5 fw-bold">概要</h2>
                                         <p class="m-0">{{ selectedItem.detail?.overview }}<br><a
-                                                :href="selectedItem.url" target="_blank" class="link-danger"><i class="bi bi-box-arrow-up-right me-2"></i>ページを見る</a></p>
+                                                :href="selectedItem.url" target="_blank" class="link-danger"><i
+                                                    class="bi bi-box-arrow-up-right me-2"></i>ページを見る</a></p>
                                     </div>
                                     <div class="mb-4 bg-light rounded p-3 border">
                                         <h2 class="fs-5 fw-bold">制作時のポイント</h2>
@@ -271,10 +259,12 @@
                                             <li v-for="result in selectedItem.detail?.results">{{ result }}</li>
                                         </ul>
                                     </div>
-                                    <div class="mb-4 bg-light rounded p-3 border">
+                                    <div class="mb-4 bg-light rounded p-3 border"
+                                        v-show="selectedItem.detail?.technology != null">
                                         <h2 class="fs-5 fw-bold">技術的なこと</h2>
                                         <ul class="m-0">
-                                            <li v-for="technology in selectedItem.detail?.technology">{{ technology }}
+                                            <li v-for="technology in selectedItem.detail?.technology">{{ technology
+                                                }}
                                             </li>
                                         </ul>
                                     </div>
@@ -296,8 +286,7 @@
                                             <h2 class="lh-1 fs-5">PC</h2>
                                         </div>
                                     </div>
-                                    <img src="https://ababuyagami.github.io/job/image/top_pc.png" alt=""
-                                        class="border border-secondary">
+                                    <img :src="selectedItem.capture?.pc" alt="" class="border border-secondary">
                                 </div>
                                 <div class="col col-md-4 mt-5 pt-5 mt-md-0 pt-md-0">
                                     <div class="row">
@@ -308,8 +297,7 @@
                                             <h2 class="lh-1 fs-5">SP</h2>
                                         </div>
                                     </div>
-                                    <img src="https://ababuyagami.github.io/job/image/top_sp.png" alt=""
-                                        class="border border-secondary">
+                                    <img :src="selectedItem.capture?.sp" alt="" class="border border-secondary">
                                 </div>
                             </div>
                         </div>
@@ -317,9 +305,14 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        new Splide('.splide', {
+            type: 'loop',
+            perPage: 1,
+        }).mount();
+    </script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         const App1 = {
@@ -328,7 +321,7 @@
                     items: [
                         {
                             image: "https://www.bodymaker.jp/_img/banner/20250210_po1.jpg",
-                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "ECサイトトップページ",
                             url: "https://www.bodymaker.jp/shop/default.aspx",
                             detail: {
@@ -352,7 +345,7 @@
                         },
                         {
                             image: "https://www.bodymaker.jp/_img/banner/20250210_po8.jpg",
-                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "筋肉図解ページ",
                             url: "https://www.bodymaker.jp/contents/training/zu.html",
                             detail: {
@@ -364,18 +357,16 @@
                                     "クリック数：949→3474",
                                     "表示回数：36,500→181,000"
                                 ],
-                                technology: [
-                                    "",
-                                ],
+                                technology: null
                             },
                             capture: {
-                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
-                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                                pc: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_contents_training_zu.html.png",
+                                sp: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_contents_training_zu.html(iPhone XR).png"
                             }
                         },
                         {
                             image: "https://www.bodymaker.jp/_img/banner/20250210_po2.jpg",
-                            badge: ["HTML", "CSS", "JavaScript", "Vue.js","Bootstrap"],
+                            badge: ["HTML", "CSS", "JavaScript", "Vue.js", "Bootstrap"],
                             title: "店舗ページ",
                             url: "https://www.bodymaker.jp/shop/secure/store.aspx",
                             detail: {
@@ -391,13 +382,13 @@
                                 ],
                             },
                             capture: {
-                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
-                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                                pc: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_store.aspx.png",
+                                sp: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_store.aspx(iPhone XR).png"
                             }
                         },
                         {
                             image: "https://www.bodymaker.jp/_img/banner/20250210_po4.jpg",
-                            badge: ["HTML", "CSS", "JavaScript", "Vue.js","Bootstrap"],
+                            badge: ["HTML", "CSS", "JavaScript", "Vue.js", "Bootstrap"],
                             title: "アウトレットページ",
                             url: "https://www.bodymaker.jp/shop/secure/outlet.aspx",
                             detail: {
@@ -414,13 +405,13 @@
                                 ],
                             },
                             capture: {
-                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
-                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                                pc: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_outlet.aspx.png",
+                                sp: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_outlet.aspx(iPhone XR).png"
                             }
                         },
                         {
                             image: "https://www.bodymaker.jp/_img/banner/20250210_po6.jpg",
-                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "ボクシングジムページ",
                             url: "https://www.bodymaker.jp/shop/secure/boxingring.aspx",
                             detail: {
@@ -431,18 +422,16 @@
                                     "継続的な施工実績",
                                     "営業活動に貢献"
                                 ],
-                                technology: [
-                                    "",
-                                ],
+                                technology: null
                             },
                             capture: {
-                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
-                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                                pc: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_boxingring.aspx.png",
+                                sp: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_boxingring.aspx(iPhone XR).png"
                             }
                         },
                         {
                             image: "https://www.bodymaker.jp/_img/banner/20250210_po7.jpg",
-                            badge: ["HTML", "CSS", "JavaScript","Bootstrap"],
+                            badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "社内ジムページ",
                             url: "https://www.bodymaker.jp/shop/secure/in_house_gym.aspx",
                             detail: {
@@ -453,13 +442,11 @@
                                     "継続的な施工実績",
                                     "営業活動に貢献"
                                 ],
-                                technology: [
-                                    "",
-                                ],
+                                technology: null
                             },
                             capture: {
-                                pc: "https://ababuyagami.github.io/job/image/top_pc.png",
-                                sp: "https://ababuyagami.github.io/job/image/top_sp.png"
+                                pc: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_in_house_gym.aspx.png",
+                                sp: "https://ababuyagami.github.io/job/image/www.bodymaker.jp_shop_secure_in_house_gym.aspx(iPhone XR).png"
                             }
                         },
 
