@@ -239,50 +239,57 @@
                 <div class="modal2-content rounded overflow-y-scroll text-start">
                     <section class="py-5">
                         <div class="container pb-5">
-                            <div class="row gx-md-5">
-                                <div class="col-12 col-md-8 mb-4 mb-md-0">
-                                    <div>
-                                        <img :src="selectedItem.image" alt="" class="border border-secondary">
+                            <h1 class="fw-bold fs-2">{{ selectedItem.title }}</h1>
+                            <div class="row mb-4 gy-2">
+                                <div class="col-auto" v-for="badge in selectedItem.badge">
+                                    <div class="bg-danger fs-7 px-2 rounded-pill text-white">{{badge}}</div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 gy-4">
+                                <div class="col">
+                                    <div class="bg-light rounded p-3 border h-100">
+                                        <h2 class="fs-5 fw-bold">概要</h2>
+                                        <p class="m-0">{{ selectedItem.detail?.overview }}<br>
+                                            <!-- <a :href="selectedItem.url" target="_blank" class="link-danger"><i
+                                                        class="bi bi-box-arrow-up-right me-2"></i>ページを見る
+                                                </a> -->
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-4">
-                                    <h1 class="fw-bold fs-2">{{ selectedItem.title }}</h1>
-                                    <div class="row mb-4 gy-2">
-                                        <div class="col-auto" v-for="badge in selectedItem.badge">
-                                            <div class="bg-danger fs-7 px-2 rounded-pill text-white">{{badge}}</div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4 bg-light rounded p-3 border">
-                                        <h2 class="fs-5 fw-bold">概要</h2>
-                                        <p class="m-0">{{ selectedItem.detail?.overview }}<br><a
-                                                :href="selectedItem.url" target="_blank" class="link-danger"><i
-                                                    class="bi bi-box-arrow-up-right me-2"></i>ページを見る</a></p>
-                                    </div>
-                                    <div class="mb-4 bg-light rounded p-3 border">
+                                <div class="col">
+                                    <div class="bg-light rounded p-3 border h-100">
                                         <h2 class="fs-5 fw-bold">制作時のポイント</h2>
                                         <p class="m-0">{{ selectedItem.detail?.point }}</p>
                                     </div>
-                                    <div class="mb-4 bg-light rounded p-3 border">
+                                </div>
+                                <div class="col">
+                                    <div class="bg-light rounded p-3 border h-100">
                                         <h2 class="fs-5 fw-bold">作業工程</h2>
                                         <p class="m-0">{{ selectedItem.detail?.engineering }}</p>
                                     </div>
-                                    <div class="mb-4 bg-light rounded p-3 border">
+                                </div>
+                                <div class="col">
+                                    <div class="bg-light rounded p-3 border h-100">
                                         <h2 class="fs-5 fw-bold">成果・実績</h2>
                                         <ul class="m-0">
                                             <li v-for="result in selectedItem.detail?.results">{{ result }}</li>
                                         </ul>
                                     </div>
-                                    <div class="mb-4 bg-light rounded p-3 border"
+                                </div>
+                                <div class="col">
+                                    <div class="bg-light rounded p-3 border h-100"
                                         v-show="selectedItem.detail?.technology != null">
                                         <h2 class="fs-5 fw-bold">技術的なこと</h2>
                                         <ul class="m-0">
-                                            <li v-for="technology in selectedItem.detail?.technology">{{ technology
-                                                }}
+                                            <li v-for="technology in selectedItem.detail?.technology">
+                                                {{ technology }}
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
                     </section>
                     <section class="py-5 bg-light">
@@ -333,7 +340,7 @@
                 return {
                     items: [
                         {
-                            image: "https://www.bodymaker.jp/_img/banner/20250210_po1.jpg",
+                            image: "https://ababuyagami.github.io/job/image/thumb1.jpg",
                             badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "ECサイトトップページ",
                             url: "https://www.bodymaker.jp/shop/default.aspx",
@@ -357,7 +364,7 @@
                             }
                         },
                         {
-                            image: "https://www.bodymaker.jp/_img/banner/20250210_po8.jpg",
+                            image: "https://ababuyagami.github.io/job/image/thumb2.jpg",
                             badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "筋肉図解ページ",
                             url: "https://www.bodymaker.jp/contents/training/zu.html",
@@ -378,7 +385,7 @@
                             }
                         },
                         {
-                            image: "https://www.bodymaker.jp/_img/banner/20250210_po2.jpg",
+                            image: "https://ababuyagami.github.io/job/image/thumb3.jpg",
                             badge: ["HTML", "CSS", "JavaScript", "Vue.js", "Bootstrap"],
                             title: "店舗ページ",
                             url: "https://www.bodymaker.jp/shop/secure/store.aspx",
@@ -400,7 +407,7 @@
                             }
                         },
                         {
-                            image: "https://www.bodymaker.jp/_img/banner/20250210_po4.jpg",
+                            image: "https://ababuyagami.github.io/job/image/thumb4.jpg",
                             badge: ["HTML", "CSS", "JavaScript", "Vue.js", "Bootstrap"],
                             title: "アウトレットページ",
                             url: "https://www.bodymaker.jp/shop/secure/outlet.aspx",
@@ -423,7 +430,7 @@
                             }
                         },
                         {
-                            image: "https://www.bodymaker.jp/_img/banner/20250210_po6.jpg",
+                            image: "https://ababuyagami.github.io/job/image/thumb5.jpg",
                             badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "ボクシングジムページ",
                             url: "https://www.bodymaker.jp/shop/secure/boxingring.aspx",
@@ -443,7 +450,7 @@
                             }
                         },
                         {
-                            image: "https://www.bodymaker.jp/_img/banner/20250210_po7.jpg",
+                            image: "https://ababuyagami.github.io/job/image/thumb6.jpg",
                             badge: ["HTML", "CSS", "JavaScript", "Bootstrap"],
                             title: "社内ジムページ",
                             url: "https://www.bodymaker.jp/shop/secure/in_house_gym.aspx",
@@ -522,8 +529,8 @@
                         if (e.target == modal2) {
                             modal2.classList.remove('is-active');
                             setTimeout(() => {
-                            modalContent.scrollTop = 0;
-                        }, 500);
+                                modalContent.scrollTop = 0;
+                            }, 500);
                         }
                     }
                     addEventListener('click', modal2Out);
